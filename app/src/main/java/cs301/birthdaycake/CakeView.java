@@ -18,6 +18,7 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+    Paint red = new Paint();
 
     CakeModel cake = new CakeModel();
 
@@ -67,6 +68,7 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+        red.setColor(Color.RED);
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -150,6 +152,8 @@ public class CakeView extends SurfaceView {
 
             }
         }
+        red.setTextSize(50);
+        canvas.drawText(""+cake.x_touch+", "+cake.y_touch, 10, 750, red);
 
         // balloon
         drawBallon(canvas);
@@ -158,9 +162,9 @@ public class CakeView extends SurfaceView {
 
 
     public void drawBallon(Canvas canvas){
-        canvas.drawCircle(cake.x, cake.y, 35, blue);
-        canvas.drawCircle(cake.x, cake.y-35, 55, blue);
-        canvas.drawRect(cake.x,cake.y+35,cake.x+5,cake.y+85,white);
+        canvas.drawCircle(cake.x_touch, cake.y_touch, 35, blue);
+        canvas.drawCircle(cake.x_touch, cake.y_touch-35, 55, blue);
+        canvas.drawRect(cake.x_touch,cake.y_touch+35,cake.x_touch+5,cake.y_touch+85,white);
     }
 
 }//class CakeView
