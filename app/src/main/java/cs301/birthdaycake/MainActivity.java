@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         how_many_candles.setOnSeekBarChangeListener(cake_con);
 
 
+        SurfaceView cord = (SurfaceView) findViewById(R.id.cakeview);
+        cord.setOnTouchListener(cake_con);
 
     }
 
