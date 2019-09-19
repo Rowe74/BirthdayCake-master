@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar how_many_candles = (SeekBar) findViewById(R.id.seekBar2);
         how_many_candles.setOnSeekBarChangeListener(cake_con);
 
-
+        cake_id.setOnTouchListener(cake_con);
 
     }
 

@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
 
@@ -19,6 +21,8 @@ public class CakeView extends SurfaceView {
 
     CakeModel cake = new CakeModel();
 
+    Paint blue = new Paint();
+    Paint white = new Paint();
 
 
     /* These constants define the dimensions of the cake.  While defining constants for things
@@ -66,6 +70,8 @@ public class CakeView extends SurfaceView {
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
+        blue.setColor(Color.BLUE);
+        white.setColor(Color.WHITE);
     }
 
 
@@ -144,7 +150,18 @@ public class CakeView extends SurfaceView {
 
             }
         }
+
+        // balloon
+        drawBallon(canvas);
     }//onDraw
+
+
+
+    public void drawBallon(Canvas canvas){
+        canvas.drawCircle(cake.x, cake.y, 35, blue);
+        canvas.drawCircle(cake.x, cake.y-35, 55, blue);
+        canvas.drawRect(cake.x,cake.y+35,cake.x+5,cake.y+85,white);
+    }
 
 }//class CakeView
 

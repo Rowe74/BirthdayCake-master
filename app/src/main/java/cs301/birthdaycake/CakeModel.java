@@ -7,9 +7,10 @@ public class CakeModel {
     public int num_candles ;
     public boolean frosting;
     public boolean candles;
+    public int x;
+    public int y;
 
     public CakeModel(){
-
         lit = true;
         num_candles= 2;
         frosting = true;
